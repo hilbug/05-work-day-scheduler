@@ -1,10 +1,16 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+
+* {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -15,17 +21,17 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: lightpink;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
 
-.description{
+.description {
   white-space: pre-wrap;
 }
 
-.time-block{
+.time-block {
   text-align: center;
   border-radius: 15px;
 }
