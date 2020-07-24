@@ -45,6 +45,16 @@ textarea {
   border-top: 1px solid white;;
 }
 
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px ;
+}
+
+.clr-btn {
+  border: 1px solid black;
+}
+
 .hour {
   color: #000000;
   border-top: 1px dashed #000000;
