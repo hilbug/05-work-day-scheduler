@@ -32,7 +32,8 @@ textarea {
   white-space: pre-wrap;
 }
 
-.time-block {
+.time-block,
+.save-block {
   text-align: left;
   border-radius: 15px;
   color: black;
