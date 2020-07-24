@@ -2,14 +2,9 @@ $(document).ready(function() {
     
     // moment date
     const todaysDate = moment();
-    console.log(todaysDate.toString());
     
     // Today's date for jumbotron
-    $("#currentDay").text(todaysDate.format("dddd | MMMM Do | YYYY"));
-    console.log($("#currentDay").text(todaysDate.format("dddd | MMMM Do YYYY | hh:mm a")));
-
-    // Hours for scheduler
-    //const workHours = [8,9,10,11,12,13,14,15,16,17,18];
+    $("#currentDay").text(todaysDate.format("dddd | MMMM Do YYYY | hh:mm a"));
 
     // Function to create rows for schedule
     function createScheduler(date) {
@@ -19,7 +14,7 @@ $(document).ready(function() {
 
         for (let i = 0; i < 12; i++) {
             
-            // Row: create div with class row 
+            // Bootstrap Row: create div with class row 
             const rowDiv = $("<div>").addClass("row").attr("id", `row${i}`);
 
             // Hour: create div with classes col-1, time-block, hour for hour display
@@ -30,10 +25,7 @@ $(document).ready(function() {
             
             // Save button: create div with classes co1-1 saveBtn for save button
             const saveDiv = $("<div>").addClass("col-1 d-flex align-items-center justify-content-center saveBtn save-block");
-            let saveBtnIcon = $("<button>").addClass("btn fas fa-save fa-lg").attr("id", i);
-
-            // increment starting hour
-            date.add(1, "hour");
+            let saveBtnIcon = $("<button>").addClass("btn fas fa-save fa-lg save-button").attr("id", i);
             
             // append all to the container?           
             $(".container").append(rowDiv.append(hourDiv,textDiv,saveDiv.append(saveBtnIcon)));
@@ -45,94 +37,43 @@ $(document).ready(function() {
             } else {
                 textDiv.addClass("present");
             }
-        }
-        console.log("html created");
-        
+
+            // increment starting hour - checking time first, then incrementing
+            date.add(1, "hour");
+        }        
     }
+
+    // call createScheduler based on page load
+    // This is required before any other function because it creates the buttons that then listen for the clicks.
+    $( window ).on("load", createScheduler());
 
     // page objects
-    let rowDiv = $(".row");
-    let saveBlock = $(".save-block");
-    let saveButton = $(".fa-save");
+    let saveButton = $(".saveBtn");
     let textBox = $(".text-box");
     let clearBtn = $(".clr-btn");
-    
-    // Empty array for calendar to-dos
-    let calList = [];
 
-    // function to save to-do
-    function storeToDo() {
-        localStorage.setItem("calList", JSON.stringify(calList));
-    }
-
-    // function to parse to-do
+    // function to show to-dos
     function displayToDo() {
         // Get stored to-dos from localStorage
-        // Parsing the JSON string to an object
-        let storedCalList = JSON.parse(localStorage.getItem("calList"));
-    
-        // If scores were retrieved from localStorage, update the scorelist array to it
-        if (storedCalList !== null) {
-            calList = storedCalList;
+        for (let i = 0; i < 12; i++) {
+            let storedCalList = localStorage.getItem("text" + i);
+            $("#text" + i).text(storedCalList);
         }
     }
 
-    // function to add to do text
+    // function to add to-dos
     function addText(event) {
         event.preventDefault();
-
-        // to save the text
-        let saveTxt = event.target;
-        let enteredText = $(this).find("textarea").val();
-        console.log(enteredText);
-        console.log("where's my text?");
-        // let enteredArrayIndex = parseInt($(this).find(".text-box").attr("id)") - 8);
-        
-        storeToDo();
-        displayToDo();
+        localStorage.setItem($(this)[0].previousElementSibling.id, $(this)[0].previousElementSibling.value);
     }
 
-    // click event on rowdiv to save the text
-    saveButton.on("click", addText);
+    // click event to save the text
+    saveButton.click(addText);
+    displayToDo();
 
     // clear scheduler
     clearBtn.on("click", function() {
         localStorage.clear();
         textBox.empty();
     });
-
-    // call createScheduler based on page load
-    $( window ).on("load", createScheduler());
-    console.log("window loaded");
-
-    // button for saving 
-    //saveButton.on("click", ...)
-    // .matches a button - use this.textarea
-
-
-
-
-    // PseudoCode
-
-    // createScheduler
-        // how do we get the array hour value into the time-block?
-
-    // format rows based on current time
-        // if current time is greater than workHours, set class .past
-        // else if current time is less than workHours, set class .future
-        // else set class .present
-    
-    // save text area to local storage
-        // when user clicks save, text is stored in local storage
-        // user story: the saved events persist - is this sessionStorage instead?
-    
-    // Set interval to check the time. if it is a new time, render the page again
-
-    // key is time value is contents of the text area
-    //click using class
-    // text area walking up and down the dom
-    // .parent element- children - hour doclumn and text area child 1, value from that.
-    
-    
-    
 });
