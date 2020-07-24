@@ -20,20 +20,24 @@
     <link rel="stylesheet" href="./assets/style.css" />
 
     <!-- Page Title -->
-    <title>Work Day Scheduler</title>
+    <title>Day Scheduler</title>
   </head>
 
   <body>
-    <!-- Header, Description, Today's Date, Time, Clear Button -->
+    <!-- Header, Description, Today's Date, Time -->
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <h1 class="display-3">Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your day</p>
       <p id="currentDay" class="lead"></p>
-      <button class="btn btn-light clr-btn">Clear Scheduler</button>
     </header>
     <!-- Container for Scheduler -->
     <div class="container">
       <!-- Timeblocks go here | Added via jQuery-->
+    </div>
+    <!-- Clear Button to clear local storage -->
+    <div class = "buttonDiv">
+        <button class="btn btn-light clr-btn">Clear Scheduler</button>
+      </div>
     </div>
 
     <!-- Script Files -->
@@ -46,6 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
   
     <!-- Local JS file -->
+    <!-- <script src="./assets/script.js"></script> -->
     <script src="./assets/script.js"></script>
   
   </body>
