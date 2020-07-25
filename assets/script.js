@@ -25,11 +25,12 @@ $(document).ready(function() {
             
             // Save button: create div with classes co1-1 saveBtn for save button
             const saveDiv = $("<div>").addClass("col-1 d-flex align-items-center justify-content-center saveBtn save-block");
-            let saveBtnIcon = $("<button>").addClass("btn fas fa-save fa-lg save-button").attr("id", i);
+            let saveBtnIcon = $("<button>").addClass("btn fas fa-save fa-lg save-button").attr("id", i).attr("title", "Save");
             
-            // append all to the container?           
+            // append all to the container           
             $(".container").append(rowDiv.append(hourDiv,textDiv,saveDiv.append(saveBtnIcon)));
 
+            // color code textDiv based on current time
             if (todaysDate.isAfter(date, "hour")) {
                 textDiv.addClass("past");
             } else if (todaysDate.isBefore(date, "hour")) {
@@ -75,5 +76,6 @@ $(document).ready(function() {
     clearBtn.on("click", function() {
         localStorage.clear();
         textBox.empty();
+        location.reload();
     });
 });
