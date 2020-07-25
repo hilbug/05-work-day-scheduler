@@ -1,16 +1,19 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
 
+/* Set font for page */
 * {
   font-family: 'M PLUS 1p', sans-serif;
 }
 
+/* Body CSS */
 body {
   font-size: 16px;
   line-height: 1;
   background-color: seashell;
 }
 
+/* Text box CSS */
 textarea {
   background: transparent;
   border: none;
@@ -20,6 +23,7 @@ textarea {
   padding: 10px;
 }
 
+/* Jumbotron / Header CSS */
 .jumbotron {
   text-align: center;
   background-color: rosybrown;
@@ -32,6 +36,7 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* Time / Save CSS */
 .time-block,
 .save-block {
   text-align: left;
@@ -42,17 +47,13 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .buttonDiv {
   display: flex;
   justify-content: center;
   margin-top: 10px ;
-}
-
-.clr-btn {
-  border: 1px solid black;
 }
 
 .hour {
@@ -62,6 +63,7 @@ textarea {
   font-size: large;
 }
 
+/* Color Coding based on times */
 .past {
   background-color: #d3d3d3;
 }
@@ -74,6 +76,10 @@ textarea {
   background-color: #77dd77;
 }
 
+/* Button CSS */
+.clr-btn {
+  border: 1px solid black;
+}
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
