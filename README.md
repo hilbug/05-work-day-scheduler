@@ -41,6 +41,6 @@ THEN the saved events persist
 ![Screen Shot 2020-07-25 at 8 21 49 PM](https://user-images.githubusercontent.com/65197724/88468672-049caa80-ceb5-11ea-9c20-00a0c0ee773c.png)
 
 ## Honorable Mentions
-Moment.js cheatsheet: https://devhints.io/moment
-Youtube channel dcode: https://www.youtube.com/channel/UCjX0FtIZBBVD3YoCcxnDC4g
-Thank you to Kemp for assisting with local storage.
+- Moment.js cheatsheet: https://devhints.io/moment
+- Youtube channel dcode: https://www.youtube.com/channel/UCjX0FtIZBBVD3YoCcxnDC4g
+- Thank you to Kemp for assisting with local storage.
