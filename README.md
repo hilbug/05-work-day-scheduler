@@ -1,10 +1,14 @@
-# 05-work-day-scheduler
+# Daily Scheduler
 
-## Description
+## Overview
 
-A simple calendar application that allows the user to save events between 8AM and 7PM. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. The page leverages Moment.js library for date and time and Bootstrap for HTML design.
+A simple calendar application in which a user can save their daily schedule between 8AM and 7PM. 
 
-The work day scheduler can be accessed here: https://hilbug.github.io/05-work-day-scheduler/
+Deployed app: https://hilbug.github.io/05-work-day-scheduler/
+
+Technologies used are: HTML, CSS, Javascript, jQuery, Moment.js
+
+Contact: hil.ferraro@gmail.com
 
 ## User Story
 
