@@ -1,5 +1,7 @@
 # Daily Scheduler
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
 ## Overview
 
 A simple calendar application in which a user can save their daily schedule between 8AM and 7PM. 
